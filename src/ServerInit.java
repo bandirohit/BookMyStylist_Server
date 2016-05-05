@@ -103,8 +103,8 @@ public class ServerInit {
                 continue;
             }
             /**
-             * Discount depending on the number of free booked slots of a
-             * stylist We are giving weightage to number of booked slots because
+             * Discount depending on the number of booked slots of a
+             * stylist, We are giving weightage to number of booked slots because
              * we want to fill time slots of a stylist completly before booking
              * a new stylist, Sending one stylist to area is more profitable
              * than sending two stylists to same are for same number of
@@ -112,14 +112,15 @@ public class ServerInit {
              */
             float bookedSlotsDicount = ((float) (8 - freeSlots.size()) / 8) * 5;
             /**
-             * More number of slots a user booked more discounts he gets This is
-             * grouping discount in our model
+             * More number of slots a user books more discounts he gets,
+             * This is grouping discount in our model
+             * 
              */
             float durationDiscount = ((float) (numSlots) / 8) * 20;
             //for debugging
             System.out.println("freeSlots of " + s.getName() + " : " + freeSlots.toString() + " bookedSlotsDicount " + bookedSlotsDicount);
             /**
-             * depending on the adjancy adding some discount
+             * depending on the adjacency adding some discount
              */
             for (Integer i : freeSlots.keySet()) {
                 float totalDiscount = 0;
